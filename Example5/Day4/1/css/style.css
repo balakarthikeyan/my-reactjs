@@ -1,0 +1,14 @@
+.left{
+    float: left !important;
+}
+.right{
+    float: right !important;
+}
+.clear { clear: both;}
+.border { 
+    float:none;  
+    border: 1px solid #666;
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+}

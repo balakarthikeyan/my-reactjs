@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Embedded JavaScript templates</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <h1> Welcome to Embedded JavaScript templates (EJS)</h1>
+    <div class="border">
+        <p>Fast, unopinionated, minimalist web framework for node</p>
+        <h2>Features</h2>
+        <ul>
+            <li>Robust routing</li>
+            <li>Focus on high performance</li>
+            <li>Super-high test coverage</li>
+            <li>HTTP helpers (redirection, caching, etc)</li>
+            <li>View system supporting 14+ template engines</li>
+            <li>Content negotiation</li>
+            <li>Executable for generating applications quickly</li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="border">
+        <h2>Employee</h2>
+        <%  employees.forEach((row, index)=>{ %>
+                <div class="width-30 border left ">
+                    <h4><%= index+1 %> </h4>
+                    <p> <%= row.name %> </p>
+                    <p> <%= row.company %> </p>
+                    <p> <%= row.exp %> </p>
+                </div>
+                <div class="clear"></div>
+        <% }) %>    
+    </div>
+</body>
+</html>

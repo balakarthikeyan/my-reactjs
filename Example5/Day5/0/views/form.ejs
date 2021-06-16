@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form id="frmContact" method="post" action="add">
+        <div class="border left">
+            <input type="text" id="sender_name" value="<%= data.name %>" name="name" placeholder="Name" />
+        </div>
+        <div class="clear"></div>
+        <div class="border left">
+            <input type="text" id="sender_email" value="" name="email" placeholder="Email" />
+        </div>
+        <div class="clear"></div>
+        <div class="border left">
+            <input type="text" id="sender_phone" value="" name="phone" placeholder="Phone" />
+        </div>
+        <div class="clear"></div>        
+        <div class="border left">
+            <textarea id="sender_comments" value="" name="comments" placeholder="Comments"></textarea>
+        </div>
+        <div class="clear"></div>
+        <button>Send</button>
+    </form>
+</body>
+</html>

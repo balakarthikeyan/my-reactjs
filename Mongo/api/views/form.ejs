@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form | Contacts</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <div>
+        <h1>Add a contact</h1>
+        <form action="<%= form.method %>" method="POST">
+            <div class="border left">
+                <input type="text" name="name" value="<%= data.name %>" placeholder="Please add your name">
+            </div>
+            <div class="clear"></div>
+            <div class="border left">            
+                <input type="email" name="email" value="<%= data.email %>" placeholder="Please add your email">
+            </div>
+            <div class="clear"></div>
+            <div class="border left">            
+                <input type="tel" name="mobile" value="<%= data.mobile %>" placeholder="Please add your mobile">
+            </div>
+            <div class="clear"></div>
+            <div class="border left">                  
+                <button type="submit">Submit</button>
+            </div>
+            <div class="clear"></div>            
+        </form>
+    </div>
+</body>
+</html>

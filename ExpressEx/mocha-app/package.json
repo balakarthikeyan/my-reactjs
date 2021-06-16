@@ -1,0 +1,17 @@
+{
+  "name": "number-formatter-app",
+  "version": "0.1.0",
+  "description": "Package to get Number Formatter Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter nyan"
+  },
+  "keywords": [],
+  "author": "balakarthikeyan07@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "chai-as-promised": "^7.1.1"
+  }
+}

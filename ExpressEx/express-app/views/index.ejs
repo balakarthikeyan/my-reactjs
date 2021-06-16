@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Embedded JavaScript templates</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="/images/favicon.ico">
+</head>
+<body>
+    <h1> Welcome to MVC CURD</h1>
+    <div class="border">
+        <h2>Employee</h2>
+        <p class="right"><a href="/form">Add Form</a></p>
+        <div clear="clear"></div>
+        <%  employees.forEach((row, index)=>{ %>
+                <div class="width-30 border left ">
+                    <div class="right">
+                        <a href="/fetch/<%= index %>">Update</a>
+                        <a href="/delete/<%= index %>">Delete</a>
+                    </div>
+                    <h4><%= index+1 %> </h4>
+                    <p> <%= row.name %> </p>
+                    <p> <%= row.email %> </p>
+                    <p> <%= row.phone %> </p><br/>
+                    <p> <%= row.comments %> </p>
+                </div>
+                <div class="clear"></div>
+        <% }) %>    
+    </div>
+</body>
+</html>

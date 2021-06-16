@@ -1,0 +1,17 @@
+{
+  "name": "generic-app",
+  "version": "0.1.1",
+  "description": "Package to get Numerous Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "balakarthikeyan07@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "chai-as-promised": "^7.1.1"
+  }
+}
