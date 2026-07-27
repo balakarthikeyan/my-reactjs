@@ -19,7 +19,7 @@ import { Avatar, Box, Button, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { AccountBox } from "@mui/icons-material"
 import { deepOrange } from '@mui/material/colors';
-import zoid from 'zoid'
+// import zoid from 'zoid'
 
 // Styled wrapper replacing withStyles
 const Root = styled("div")(({ theme }) => ({
@@ -57,7 +57,7 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <CourseNavigation />
+        {/* <CourseNavigation /> */}
         <CourseList />
         <GitHubHome />
         <ConstructorExample />

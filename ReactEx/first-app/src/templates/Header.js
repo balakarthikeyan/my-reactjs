@@ -19,26 +19,26 @@ import { Button, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { makeStyles } from '@mui/material/styles';
 import NavBar from './NavBar';
-const useStyles = makeStyles(theme => ({
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 0,
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   menuButton: {
+//     marginRight: theme.spacing(2),
+//   },
+//   title: {
+//     flexGrow: 0,
+//   },
+// }));
 
 const Header = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
     return(
         <>
         <AppBar position="static" color="primary">
           <Container maxWidth="lg">
             <Toolbar>
-              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <IconButton edge="start" color="inherit" aria-label="menu"> {/* className={classes.menuButton} */}
                 <MenuIcon />
               </IconButton>            
-              <Typography variant="h6" color="inherit" className={classes.title}>
+              <Typography variant="h6" color="inherit"> {/* className={classes.title} */}
                 Material UI Demo
               </Typography>
               <NavBar />

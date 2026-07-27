@@ -8,16 +8,16 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const useStyles = makeStyles({
-  card: {
+// const useStyles = makeStyles({
+//   card: {
     
-  },
-});
+//   },
+// });
 
 export default function ImgMediaCard() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <Card className={classes.card}>
+    <Card> {/* className={classes.card} */}
       <CardActionArea>
         <CardMedia
           component="img"
