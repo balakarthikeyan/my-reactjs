@@ -1,16 +1,19 @@
 import React from 'react';
-import { Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 
 import SidebarAwards from './SidebarAwards';
 import SidebarPromotions from './SidebarPromotions';
 
-const SidebarContent = (props) => {
+const SidebarContent = () => {
     return (
-        <> 
-        <Route path="/sidebar/awards" component={SidebarAwards} />
-        <Route path="/sidebar/promotions" component={SidebarPromotions} />
-        </>
-        );
-}
+        <React.Fragment>
+            <h3>Please select a menu item</h3>
+            <Routes>
+                <Route path="/sidebar/awards" element={<SidebarAwards />} />
+                <Route path="/sidebar/promotions" element={<SidebarPromotions />} />
+            </Routes>
+        </React.Fragment>
+    );
+};
 
-export default SidebarContent
+export default SidebarContent;

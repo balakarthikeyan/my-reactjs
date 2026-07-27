@@ -14,10 +14,10 @@ function Headers() {
     );
 } */
 import React from 'react'
-import { AppBar, Toolbar, Typography, Container } from "@material-ui/core";
-import { Button, IconButton } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Typography, Container } from "@mui/material";
+import { Button, IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { makeStyles } from '@mui/material/styles';
 import NavBar from './NavBar';
 const useStyles = makeStyles(theme => ({
   menuButton: {

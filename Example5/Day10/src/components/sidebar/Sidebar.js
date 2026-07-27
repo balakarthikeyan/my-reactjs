@@ -1,18 +1,15 @@
 import React from 'react';
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
-import SidebarContent from './SidebarContent';
-
-const Sidebar = (props) => {
+const Sidebar = () => {
     return (
         <>
-           <div className="border"><SidebarContent /></div> 
             <div className="side-bar">
-                    <Link className="side-link" to="/sidebar/awards">Awards</Link>
-                    <Link className="side-link" to="/sidebar/promotions">Promotions</Link>
+                <NavLink className="side-link" to="/sidebar/awards">Awards</NavLink>
+                <NavLink className="side-link" to="/sidebar/promotions">Promotions</NavLink>
             </div>
         </>
-        );
-}
+    );
+};
 
-export default Sidebar
+export default Sidebar;

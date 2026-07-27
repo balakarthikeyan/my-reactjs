@@ -14,15 +14,15 @@
         </div>
         <div class="clear"></div>
         <div class="border left">
-            <input type="text" id="sender_email" value="" name="email" placeholder="Email" />
+            <input type="text" id="sender_email" value="<%= data.email %>" name="email" placeholder="Email" />
         </div>
         <div class="clear"></div>
         <div class="border left">
-            <input type="text" id="sender_phone" value="" name="phone" placeholder="Phone" />
+            <input type="text" id="sender_phone" value="<%= data.phone %>" name="phone" placeholder="Phone" />
         </div>
         <div class="clear"></div>        
         <div class="border left">
-            <textarea id="sender_comments" value="" name="comments" placeholder="Comments"></textarea>
+            <textarea id="sender_comments" name="comments" placeholder="Comments"><%= data.comments %></textarea>
         </div>
         <div class="clear"></div>
         <button>Send</button>

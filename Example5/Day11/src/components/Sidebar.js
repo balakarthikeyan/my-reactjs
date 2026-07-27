@@ -1,35 +1,33 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
-import { withRouter } from "react-router-dom"
 
 class Sidebar extends Component {
 
-    logout = () =>{
-        console.log("Logout Called")
+    logout = () => {
         localStorage.removeItem('isAuthenticated');
         this.setState({
-            isAuthenticated:false,
+            isAuthenticated: false,
         }, () => {
-            this.props.history.push("/about")
-        });  
+            this.props.navigate("/")
+        });
     }
-    
+
     render() {
         console.log("From Sidebar:", this.props)
         return (
             <>
-            <div className="border">
-                <h2>Side menu</h2>
-                <div className="side-bar">
+                <div className="border">
+                    <h2>Side menu</h2>
+                    <div className="side-bar">
                         <Link className="side-link" to="/dashboard">Dashboard</Link>
                         {
-                        this.props.isAuthenticated && <Link className="side-link" to="#" onClick={this.logout}>Logout</Link>
-                        } 
+                            this.props.isAuthenticated && <Link className="side-link" to="#" onClick={this.logout}>Logout</Link>
+                        }
+                    </div>
                 </div>
-            </div>
             </>
         );
     }
 }
 
-export default withRouter(Sidebar)
+export default Sidebar;

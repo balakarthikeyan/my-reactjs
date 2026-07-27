@@ -7,20 +7,20 @@ module.exports = {
         path : path.resolve(__dirname, '/dist'),
         filename: "bundle.js"
     },
-    devServer: {  
-      inline: true,  
-      port: 8000 ,
-      // Enable compression
-      compress: true,
-      // Enable hot reloading
-      hot: true, 
-    },
+    // devServer: {  
+    //   inline: true,  
+    //   port: 8000 ,
+    //   // Enable compression
+    //   compress: true,
+    //   // Enable hot reloading
+    //   hot: true, 
+    // },
     module: {
         rules : [
             {
                 //babel - babel loader
                 test :/\.(js)$/, 
-                exculde: '/node_modules/',
+                // exculde: '/node_modules/',
                 use : {
                     loader :'babel-loader'
                 } 

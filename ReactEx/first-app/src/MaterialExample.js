@@ -4,14 +4,14 @@ import Axios from "axios";
 import "./public/css/App.css";
 import Header from "./templates/Header";
 import Footer from "./templates/Footer";
-import { Typography, Container } from "@material-ui/core";
-import { Grid, GridList, GridListTile, Paper, GridListTileBar, ListSubheader } from "@material-ui/core";
-import { Card, CardActions, CardContent, CardMedia, CardHeader} from '@material-ui/core';
-import { Avatar, Box, Button, IconButton  } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
-import { AccountBox  } from "@material-ui/icons"
+import { Typography, Container } from "@mui/material";
+import { Grid, GridList, GridListTile, Paper, GridListTileBar, ListSubheader } from "@mui/material";
+import { Card, CardActions, CardContent, CardMedia, CardHeader} from '@mui/material';
+import { Avatar, Box, Button, IconButton  } from "@mui/material";
+import { withStyles } from "@mui/material/styles";
+import { AccountBox  } from "@mui/icons-material"
 import { ImgMediaCard } from './templates/CardComponent'
-import { deepOrange } from '@material-ui/core/colors';
+import { deepOrange } from '@mui/material/colors';
 
 const themeStyles = (theme) => ({
   root: {

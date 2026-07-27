@@ -1,10 +1,10 @@
 import React from "react";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import TypoGraphy from "@material-ui/core/Typography";
-import { Home, Book, AccountBox } from '@material-ui/icons';
-import { makeStyles } from "@material-ui/core/styles";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import TypoGraphy from "@mui/material/Typography";
+import { Home, Book, AccountBox } from '@mui/icons-material';
+import { makeStyles } from "@mui/material/styles";
 
 const useStyles = makeStyles(
   (theme) => ({

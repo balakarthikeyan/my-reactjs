@@ -1,18 +1,9 @@
-/* const personStore = {
+const personStore = {
 	greet() {
 		console.log(`Hello Constructor Function`);
     }
 }
-personStore.greet(); */
-
-exports.sayHowdy = function sayHowdy() {
-    console.log("Howdy");
-}
-
-exports.testMe = function testMe() {
-    setTimeout(exports.sayHowdy, 5000);
-    console.log("Test after Howdy");
-}
+personStore.greet();
 
 function delayedGreet() {
     setTimeout(() => {console.log("Have a Nice day")}, 2000);
@@ -24,6 +15,7 @@ function helloGoodbye() {
         delayedGreet();
     }, 1000);
 }
+helloGoodbye();
 
 const userData = () => {
     return [
@@ -52,9 +44,9 @@ fetchData
     console.log(err);
 });
 
-async function fetchData () {
+async function fetchDates () {
     try {
-        const response = await userData;
+        const response = userData();
         if(response.length > 0){
             console.log(response);
         } else {
@@ -64,6 +56,4 @@ async function fetchData () {
         console.log(err);
     }
 }
-
-helloGoodbye();
-fetchData ();
+fetchDates();

@@ -1,4 +1,4 @@
-var myModule = require('./index.js');
+var myModule = require('./exportex.js');
     myModule.testMe();
 
 const http = require('http');

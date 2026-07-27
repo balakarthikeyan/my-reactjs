@@ -1,20 +1,21 @@
 import React from 'react';
-import Sidebar from './sidebar/Sidebar';
+import { useNavigate } from "react-router-dom";
 
-const Home = (props) => {
+const Home = () => {
+    const navigate = useNavigate();
+
     const onClickGotoUrl = () => {
-        props.history.push("/onclick")
-    }
-    return ( 
+        navigate("/onclick");
+    };
+
+    return (
         <>
-            <div className="left width-3-4 no-gap">
+            <div className="border">
                 <h3>Home</h3>
                 <button onClick={onClickGotoUrl}>Go to URL</button>
             </div>
-            <div className="right width-1-4 no-gap">
-                <Sidebar />
-            </div>
         </>
-        );
-}
-export default  Home;
+    );
+};
+
+export default Home;

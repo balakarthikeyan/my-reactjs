@@ -20,16 +20,3 @@ app.use("*", (req, res)=>{
 app.listen(port, ()=> {
     console.log(`Server started at ${port}`);
 });
-//git config --global http.proxy http://webproxy.uaeexchange.com:8080 
-//git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
-// show dbs
-// show collections
-// use database_name
-// db.table_name.create({"name":"bala"})
-// db.student.insert({"name":"vivek"})
-// db.student.find()
-// db.student.find().pretty()
-// db.student.find({"name":"bala"})
-// db.student.update({"name":"vivek"}, {$set : {"name":"satis"}})
-// db.student.remove({"name":"bala"})
-// db.student.drop()

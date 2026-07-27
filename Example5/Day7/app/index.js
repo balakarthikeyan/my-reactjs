@@ -2,7 +2,7 @@ import React , { Component } from "react";
 import ReactDom from "react-dom";
 
 import './css/style.css';
-import Component1 from "./component/Component1";
+import CustomComponent from "./component/CustomComponent";
 import Persons from "./component/Persons";
 class App extends Component {
     render() {
@@ -14,7 +14,7 @@ class App extends Component {
         return (
             <div>
                 <h1> Hello world React JS </h1>                
-                <Component1 personsObj = {employees}></Component1>
+                <CustomComponent personsObj = {employees}></CustomComponent>
                 <Persons></Persons>
             </div>
         )

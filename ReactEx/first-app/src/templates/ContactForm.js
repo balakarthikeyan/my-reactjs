@@ -6,7 +6,7 @@ import {
   Button,
   TextField,
   Typography
-} from "@material-ui/core";
+} from "@mui/material";
 /* import {
   Table,
   TableBody,
@@ -14,7 +14,7 @@ import {
   TableHead,
   TableRow,
   Paper,
-} from '@material-ui/core'; */
+} from '@mui/material'; */
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);

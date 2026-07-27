@@ -1,14 +1,14 @@
 import React from 'react';
-import Sidebar from './sidebar/Sidebar';
-export default function User (props) {
+import { useParams } from "react-router-dom";
+
+export default function User() {
+    const { id } = useParams();   // get the dynamic route param
+
     return (
-        <> 
-            <div className="left width-3-4 no-gap">
-                <h3>User is {props.match.params.id}</h3>
-            </div>
-            <div className="right width-1-4 no-gap">
-                <Sidebar />
+        <>
+            <div className="border">
+                <h3>User is {id}</h3>
             </div>
         </>
-        );
+    );
 }

@@ -1,14 +1,35 @@
 import React from 'react';
-import { NavLink } from "react-router-dom"
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
-const Navbar = (props) => {
-    return ( 
-        <div className="nav-bar">
-                <NavLink className="nav-link" activeClassName="highlight" to="/">Home</NavLink>
-                {props.isAuthenticated ? null : <NavLink className="nav-link" activeClassName="highlight" to="/login">Login</NavLink> }
-                <NavLink className="nav-link" activeClassName="highlight" to="/about">About us</NavLink>
-        </div>
-        );
-}
+const Navbar = ({ isAuthenticated, setIsAuthenticated }) => {
+	const navigate = useNavigate();
 
-export default Navbar
+	const logout = () => {
+		localStorage.removeItem('isAuthenticated');
+		setIsAuthenticated(false);
+		navigate("/");
+	};
+
+	return (
+		<div className="nav-bar">
+			<NavLink className={({ isActive }) => isActive ? "nav-link highlight" : "nav-link"} to="/">
+				Home
+			</NavLink>
+			<NavLink className={({ isActive }) => isActive ? "nav-link highlight" : "nav-link"} to="/about">
+				About us
+			</NavLink>
+			{!isAuthenticated && (
+				<NavLink className={({ isActive }) => isActive ? "nav-link highlight" : "nav-link"} to="/login">
+					Login
+				</NavLink>
+			)}
+			{isAuthenticated && (
+				<Link to="#" onClick={logout}>
+					Logout
+				</Link>
+			)}
+		</div>
+	);
+};
+
+export default Navbar;

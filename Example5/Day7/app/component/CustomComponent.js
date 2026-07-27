@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PrintName from './PrintName';
 
-class Component1 extends Component {
+class CustomComponent extends Component {
     render() { 
         const name = "Bala Karthikeyan";
         return ( 
@@ -26,4 +26,4 @@ class Component1 extends Component {
     }
 }
  
-export default Component1;
+export default CustomComponent;

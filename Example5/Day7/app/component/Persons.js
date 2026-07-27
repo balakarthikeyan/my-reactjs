@@ -5,12 +5,12 @@ class Persons extends Component {
         const friends = [
             {
                 name: "vivek",
-                emal: "vivek@xyz.com",
+                email: "vivek@xyz.com",
                 isFriend: true
             },
             {
                 name: "Sathis",
-                emal: "sathis@xyz.com",
+                email: "sathis@xyz.com",
                 isFriend: false
             }
         ];
