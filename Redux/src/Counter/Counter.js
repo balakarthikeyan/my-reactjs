@@ -1,24 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux';
-import { incrementCounter, decrementCounter } from './action'
-const Counter = ({ count, incrementCounter, decrementCounter }) => (
-    <div>
-        <h1>Count  : {count}</h1>
-        <h1>Increment</h1>
-        <button onClick={incrementCounter}>Increment</button>
-        <h1>Decrement</h1>
-        <button onClick={decrementCounter}>Decrement</button>
-    </div>
-)
+import { useSelector, useDispatch } from 'react-redux';
+import { incrementCounter, decrementCounter } from './counterSlice';
 
-const mapStateToProps = state => ({
-    count: state.counter.count,
-})
+const Counter = () => {
+    const count = useSelector((state) => state.counter.count);
+    const dispatch = useDispatch();
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    incrementCounter,
-    decrementCounter
-}, dispatch)
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={() => dispatch(incrementCounter())}>Increment</button>
+            <button onClick={() => dispatch(decrementCounter())}>Decrement</button>
+        </div>
+    );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter) 
+export default Counter;

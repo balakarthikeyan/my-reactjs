@@ -5,30 +5,37 @@ import { useParams } from 'react-router-dom';
 import { Poster } from './Movie';
 
 const MovieDetail = () => {
-	const { id } = useParams();
+	const { id } = useParams(); // Reads parameter from URL route /:id
 	const [movie, setMovie] = useState(null);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		async function fetchMovie() {
 			try {
-				const res = await axios.get(`https://api.sampleapis.com/movies/action-adventure/${id}`);
+				const res = await axios.get(
+					`https://api.sampleapis.com/movies/action-adventure/${id}`
+				);
 				setMovie(res.data);
 			} catch (err) {
 				console.error('Error fetching movie details:', err);
+			} finally {
+				setLoading(false);
 			}
 		}
 		fetchMovie();
 	}, [id]);
 
-	if (!movie) return null;
+	if (loading) return <div>Loading movie details...</div>;
+	if (!movie) return <div>Movie details not found.</div>;
 
 	const backdrop = movie.images?.fanart || movie.posterURL;
+	const poster = movie.posterURL || movie.images?.poster;
 
 	return (
 		<div>
 			<MovieWrapper backdrop={backdrop}>
 				<MovieInfo>
-					<Poster src={movie.posterURL || movie.images?.poster} alt={movie.title} />
+					<Poster src={poster} alt={movie.title} />
 					<Moveup>
 						<h2>{movie.title}</h2>
 					</Moveup>
@@ -43,7 +50,7 @@ export default MovieDetail;
 const MovieWrapper = styled.div`
   position: relative;
   padding-top: 50vh;
-  background: url(${props => props.backdrop}) no-repeat;
+  background: url(${(props) => props.backdrop}) no-repeat;
   background-size: cover;
 `;
 

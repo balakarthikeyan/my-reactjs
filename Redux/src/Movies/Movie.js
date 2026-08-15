@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Movie = ({ movie }) => {
-    const posterUrl = movie.posterURL || movie.images?.poster;
+    // Safe extraction for fallback images
+    const posterUrl = movie.posterURL || movie.images?.poster || 'https://via.placeholder.com/200x250?text=No+Image';
     const movieId = movie.id || movie._id;
 
     return (
         <Link to={`/${movieId}`}>
-            <Poster src={posterUrl} alt={movie.title} />
+            <Poster src={posterUrl} alt={movie.title || 'Movie Poster'} />
         </Link>
     );
 };
