@@ -1,22 +1,23 @@
 import React from 'react';
-import styled from 'styled-components'
-import {BrowserRouter as Router, Link , Route ,Switch} from 'react-router-dom'
-const Movie =(props)=> {
-return(
-    <Link to={`${props.movie.imdb_id}`}>
-<Poster
-   src={props.movie.images.poster}
-  
-/>
-</Link>
-)
-}
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export default Movie
+const Movie = ({ movie }) => {
+    const posterUrl = movie.posterURL || movie.images?.poster;
+    const movieId = movie.id || movie._id;
+
+    return (
+        <Link to={`/${movieId}`}>
+            <Poster src={posterUrl} alt={movie.title} />
+        </Link>
+    );
+};
+
+export default Movie;
 
 export const Poster = styled.img`
-box-shadow : 0 0 35px black;
-width: 200px
-height: 250px
-`
-
+  box-shadow: 0 0 35px black;
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+`;

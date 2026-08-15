@@ -1,5 +1,4 @@
-import {combineReducers} from 'redux'
-
+import { combineReducers } from 'redux'
 import toggle from './Toggle/reducer'
 import counter from './Counter/reducer'
 import moviestate from './Movies/reducer'
@@ -8,5 +7,4 @@ const rootReducer = combineReducers({
     counter,
     moviestate
 })
-
-export default rootReducer 
+export default rootReducer;

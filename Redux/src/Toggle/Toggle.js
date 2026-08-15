@@ -1,22 +1,23 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import {toggleMessage} from './action'
+import { toggleMessage } from './action'
+
 //functional component
-const Toggle =({toggleMessageShow,toggleMessage})=>(
-  <div>
-      {toggleMessageShow &&   <p>ths19-3 learning redux by </p> }
-  
-    <button onClick={toggleMessage}>Toggle </button>
+const Toggle = ({ toggleMessageShow, toggleMessage }) => (
+    <div>
+        {toggleMessageShow && <p>Learning redux example</p>}
+
+        <button onClick={toggleMessage}>Toggle </button>
     </div>
 )
 
-const mapStateToProps = state =>({
-    toggleMessageShow : state.toggle.toggleMessageShow
+const mapStateToProps = state => ({
+    toggleMessageShow: state.toggle.toggleMessageShow
 })
 
-const mapDispatchToProps = dispatch=> bindActionCreators({
+const mapDispatchToProps = dispatch => bindActionCreators({
     toggleMessage
-},dispatch)
+}, dispatch)
 
-export default connect(mapStateToProps,mapDispatchToProps)(Toggle)
+export default connect(mapStateToProps, mapDispatchToProps)(Toggle)

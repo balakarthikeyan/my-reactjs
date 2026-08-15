@@ -1,42 +1,43 @@
-import React, { Component } from 'react';
-import axios from 'axios'
-import styled from 'styled-components'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import styled from 'styled-components';
+import { useParams } from 'react-router-dom';
 import { Poster } from './Movie';
-import ReactPlayer from 'react-player'
-class MovieDetail extends Component {
-    state = { 
-        movie : {}
-     }
-    async componentDidMount(){
-        console.log("wheen is this update ?")
-        const {match} = this.props
-         const res= await axios.get(`https://tv-v2.api-fetch.website/movie/${match.params.id}`)
-         this.setState({
-             movie: res.data
-         })
-     }
-    render() { 
-        console.log("render pehle")
-        const {movie} = this.state 
-        if(!movie._id) return null;
-        return ( 
-         
-           
-            <div>
-                <MovieWrapper backdrop={movie.images.fanart}>
-                <MovieInfo>
-                   <Poster src={movie.images.poster}/>
-                   <Moveup>
-                 <h2> {movie.title}</h2>
-                 </Moveup>
-               </MovieInfo>
-               </MovieWrapper>
-            </div>
-          
-         );
-    }
-}
- 
+
+const MovieDetail = () => {
+	const { id } = useParams();
+	const [movie, setMovie] = useState(null);
+
+	useEffect(() => {
+		async function fetchMovie() {
+			try {
+				const res = await axios.get(`https://api.sampleapis.com/movies/action-adventure/${id}`);
+				setMovie(res.data);
+			} catch (err) {
+				console.error('Error fetching movie details:', err);
+			}
+		}
+		fetchMovie();
+	}, [id]);
+
+	if (!movie) return null;
+
+	const backdrop = movie.images?.fanart || movie.posterURL;
+
+	return (
+		<div>
+			<MovieWrapper backdrop={backdrop}>
+				<MovieInfo>
+					<Poster src={movie.posterURL || movie.images?.poster} alt={movie.title} />
+					<Moveup>
+						<h2>{movie.title}</h2>
+					</Moveup>
+				</MovieInfo>
+			</MovieWrapper>
+		</div>
+	);
+};
+
 export default MovieDetail;
 
 const MovieWrapper = styled.div`
@@ -61,5 +62,5 @@ const MovieInfo = styled.div`
 `;
 
 const Moveup = styled.div`
-margin-top : -6rem
-`
+  margin-top: -6rem;
+`;
